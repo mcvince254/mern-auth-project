@@ -115,7 +115,7 @@ export const sendVerifyOTP = async (req, res) => {
 
         // Ensure these field names match your User Schema exactly!
         user.verifyOtp = otp; 
-        user.verifyOtpExpireAt = Date.now() + 24 * 60 * 60 * 1000;
+        user.verifyOtpExpiredAt = Date.now() + 24 * 60 * 60 * 1000;
 
         await user.save();
 
@@ -157,7 +157,7 @@ export const verifyEmail = async(req,res) =>{
             return res.json({success:false,message:"Invalid OTP"})
         }
 
-        if(user.verifyOtpExpireAt < Date.now()){
+        if(user.verifyOtpExpiredAt < Date.now()){
             return res.json({success:false,message:"Expired OTP"})
         }
 
@@ -254,7 +254,7 @@ export const resetPassword = async(req,res) =>{
        if(user.resetOtp ===""|| user.resetOtp !== otp){
     return res.json({success:false,message:"Invalid OTP"})    
     }
-  if( user.resetOtpExpireAt < Date.now()){
+  if( user.resetOtpExpiredAt < Date.now()){
 
         return res.json({success:false,message:'Expired Otp'})
   }
@@ -263,7 +263,7 @@ export const resetPassword = async(req,res) =>{
    const hashedPassword = await bcrypt.hash(newPassword,10)
    user.password = hashedPassword;
    user.resetOtp = '';
-   user.resetOtpExpireAt = 0;
+   user.resetOtpExpiredAt = 0;
    await user.save();
    return res.json({success:true,message:'password has been reset successfully'})
 
