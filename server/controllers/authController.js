@@ -222,13 +222,17 @@ export const sendResetOtp = async(req,res) =>{
 
         };
 
-        // Fix: Changed .sendEmail to .sendMail
-        await transporter.sendMail(mailOption);
+     // comment this out--email error
+    //debug: comment out SMTP email sending to fix reset password flow on production
+    // await transporter.sendMail(mailOption);
 
-                res.json({success:true,message:'reset otp sent to user'})
+      console.log("OTP:", otp);
+
+     return res.json({ success: true, message: "OTP generated (email skipped)" });
                 
                 
-    }
+      
+  }
     catch(error){
 
                 res.json({success:false,message:error.message})
