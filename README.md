@@ -1,6 +1,11 @@
 # MERN Authentication System
 
-Full-stack authentication app using React (frontend) and Node.js/Express (backend).
+# 🔐 MERN Authentication System
+
+🚀 **Live Demo:** https://mern-auth-project-beige.vercel.app/ 
+🔗 **Backend API:** https://mern-auth-project-jeu8.onrender.com
+
+A production-ready authentication system built with the MERN stack, featuring JWT authentication, OTP-based password reset, and real-world deployment handling.
 
 ---
 
@@ -13,11 +18,22 @@ Full-stack authentication app using React (frontend) and Node.js/Express (backen
 
 ---
 
-## Tech Stack
 
-* Frontend: React (Vite)
-* Backend: Node.js, Express
-* Database: MongoDB
+## 🛠️ Tech Stack
+
+### Frontend
+- React (Vite)
+- Axios
+- React Router
+- Tailwind CSS
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT (Authentication)
+- bcrypt (Password hashing)
+
 
 ---
 
@@ -55,10 +71,37 @@ npm run dev
 
 ---
 
-## Notes
 
+---
 
-* Use `.env.example` as a guide
+## 🌐 Deployment
+
+- Frontend deployed on Vercel  
+- Backend deployed on Render  
+- MongoDB Atlas used for production database  
+
+---
+
+## ⚠️ Notes
+
+- Email functionality may be disabled in production due to SMTP limitations  
+- OTP is generated and stored in the database for testing  
+
+---
+
+## 💡 Key Learnings
+
+- Implemented full authentication flow with JWT  
+- Handled real-world deployment issues (CORS, environment variables)  
+- Debugged production issues including SMTP/email failures  
+- Built and deployed a complete full-stack application  
+
+---
+
+## 👤 Author
+
+Vincent Charagu  
+GitHub: https://github.com/your-username  
 
 
 
