@@ -42,9 +42,9 @@ export const register = async (req, res) => {
             text: `Welcome user created with email id : ${email}`
         }
 
-	await transporter.sendMail(mailOption);
+		await transporter.sendMail(mailOptions);
 
-        //await transporter.sendMail(mailOptions);
+        
         console.log(`welcome email sent to ${email}`)
 
         return res.json({ success: true });
