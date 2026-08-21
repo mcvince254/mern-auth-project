@@ -41,8 +41,8 @@ export const register = async (req, res) => {
             subject:"Welcome to GreatStack",
             text: `Welcome user created with email id : ${email}`
         }
-// ⚠️ Email sending disabled due to SMTP timeout issues in production
-// await transporter.sendMail(mailOption);
+
+	await transporter.sendMail(mailOption);
 
         //await transporter.sendMail(mailOptions);
         console.log(`welcome email sent to ${email}`)
