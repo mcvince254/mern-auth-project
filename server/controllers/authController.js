@@ -243,8 +243,12 @@ export const sendResetOtp = async (req, res) => {
                 .replace("{{otp}}", otp)
                 .replace("{{email}}", user.email)
         };
-
+				console.log("SMTP SERVICE:", process.env.SMTP_SERVICE);
+				console.log("SMTP EMAIL:", process.env.SMTP_EMAIL);
+				console.log("SENDER EMAIL:", process.env.SENDER_EMAIL);
+				console.log("About to send reset email");
         await transporter.sendMail(mailOption);
+				console.log("Reset email actually sent");	
 
         return res.json({
             success: true,
